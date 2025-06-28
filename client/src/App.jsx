@@ -1,17 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css'
+import Navbar from './component/Navbar';
+import Contact from './pages/Contact'
 
 function App() {
   
 
   return (
     <>
-   <h1 class="text-3xl text-red-500 bg-blue-200 font-bold underline">
-      Hello world!
-    </h1>  
+  
+    <Router>
+
+       <Navbar/>
+      <Routes>
+        <Route path="/" element={<h1>Welcome to GoEase</h1>}/>
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+    </Router>
   
     </>
   )
 }
 
-export default App
+export default App;
